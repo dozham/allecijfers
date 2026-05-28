@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == "en" %}Search neighbourhoods{% else %}Zoek buurten{% endif %}{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold tracking-tight mb-6">
+  {% if lang == "en" %}Search{% else %}Zoeken{% endif %}
+</h1>
+
+<label class="input input-bordered flex items-center gap-2 rounded-full mb-4 bg-base-100 shadow-sm">
+  <svg class="h-4 w-4 shrink-0 opacity-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+  </svg>
+  <input
+    type="search"
+    name="q"
+    class="grow"
+    placeholder="{% if lang == 'en' %}Search neighbourhoods…{% else %}Zoek buurten…{% endif %}"
+    autofocus
+    hx-get="/search"
+    hx-trigger="input changed delay:200ms, search"
+    hx-target="#results"
+    hx-include="[name='municipality'],[name='type']"
+  >
+</label>
+
+{# Type filter #}
+<div class="flex flex-wrap gap-2 mb-2">
+  <input type="radio" id="type-all" name="type" value="" class="sr-only peer/type-all" checked
+    hx-get="/search" hx-trigger="change" hx-target="#results"
+    hx-include="[name='q'],[name='municipality'],[name='type']">
+  <label for="type-all" class="btn btn-sm rounded-full btn-outline peer-checked/type-all:btn-neutral peer-checked/type-all:border-neutral">
+    {% if lang == "en" %}All types{% else %}Alle typen{% endif %}
+  </label>
+
+  <input type="radio" id="type-wijk" name="type" value="wijk" class="sr-only peer/type-wijk"
+    hx-get="/search" hx-trigger="change" hx-target="#results"
+    hx-include="[name='q'],[name='municipality'],[name='type']">
+  <label for="type-wijk" class="btn btn-sm rounded-full btn-outline peer-checked/type-wijk:btn-neutral peer-checked/type-wijk:border-neutral">
+    {% if lang == "en" %}District{% else %}Wijk{% endif %}
+  </label>
+
+  <input type="radio" id="type-buurt" name="type" value="buurt" class="sr-only peer/type-buurt"
+    hx-get="/search" hx-trigger="change" hx-target="#results"
+    hx-include="[name='q'],[name='municipality'],[name='type']">
+  <label for="type-buurt" class="btn btn-sm rounded-full btn-outline peer-checked/type-buurt:btn-neutral peer-checked/type-buurt:border-neutral">
+    {% if lang == "en" %}Neighbourhood{% else %}Buurt{% endif %}
+  </label>
+</div>
+
+{# Municipality filter — horizontally scrollable #}
+<div class="flex items-center gap-2 mb-6">
+  <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap flex-1">
+    <input type="radio" id="muni-all" name="municipality" value="" class="sr-only peer/muni-all" checked
+      hx-get="/search" hx-trigger="change" hx-target="#results"
+      hx-include="[name='q'],[name='municipality'],[name='type']">
+    <label for="muni-all" class="btn btn-sm rounded-full btn-outline whitespace-nowrap peer-checked/muni-all:btn-neutral peer-checked/muni-all:border-neutral">
+      {% if lang == "en" %}All{% else %}Alle{% endif %}
+    </label>
+
+    {% for m in municipalities %}
+    <input type="radio" id="muni-{{ m }}" name="municipality" value="{{ m }}" class="sr-only peer/muni-{{ m }}"
+      hx-get="/search" hx-trigger="change" hx-target="#results"
+      hx-include="[name='q'],[name='municipality'],[name='type']">
+    <label for="muni-{{ m }}" class="btn btn-sm rounded-full btn-outline whitespace-nowrap peer-checked/muni-{{ m }}:btn-neutral peer-checked/muni-{{ m }}:border-neutral">
+      {{ m | capitalize }}
+    </label>
+    {% endfor %}
+  </div>
+  <button onclick="document.getElementById('crawl-modal').showModal()"
+    class="btn btn-sm btn-circle btn-ghost flex-shrink-0"
+    title="{% if lang == 'en' %}Crawl new municipality{% else %}Nieuwe gemeente crawlen{% endif %}">+</button>
+</div>
+
+{# Crawl modal #}
+<dialog id="crawl-modal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg mb-4">
+      {% if lang == "en" %}Crawl municipality{% else %}Gemeente crawlen{% endif %}
+    </h3>
+    <form hx-post="/crawl/start" hx-target="#crawl-result" hx-swap="innerHTML">
+      <label class="input input-bordered flex items-center gap-2 rounded-full mb-4 bg-base-100">
+        <input type="text" name="municipality" class="grow"
+          placeholder="{% if lang == 'en' %}e.g. rotterdam{% else %}bijv. rotterdam{% endif %}">
+      </label>
+      <button type="submit" class="btn btn-primary btn-sm rounded-full">
+        {% if lang == "en" %}Start crawl{% else %}Start crawl{% endif %}
+      </button>
+    </form>
+    <div id="crawl-result" class="mt-4"></div>
+  </div>
+  <form method="dialog" class="modal-backdrop"><button>close</button></form>
+</dialog>
+
+<div id="results"
+  hx-get="/search"
+  hx-trigger="load"
+  hx-target="#results"
+  hx-swap="outerHTML"
+></div>
+{% endblock %}

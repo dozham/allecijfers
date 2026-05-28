@@ -245,3 +245,9 @@ def test_crawl_start_invalid_chars_returns_error(client):
     resp = client.post("/crawl/start", data={"municipality": "den haag!"})
     assert resp.status_code == 200
     assert "alert-error" in resp.text
+
+
+def test_index_has_crawl_modal_trigger(client):
+    resp = client.get("/")
+    assert "crawl-modal" in resp.text
+    assert 'hx-post="/crawl/start"' in resp.text
