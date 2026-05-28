@@ -1,0 +1,25 @@
+# Python / dev tooling
+.venv/
+.pytest_cache/
+.python-version
+**/__pycache__/
+*.pyc
+
+# Package management (not needed — deps installed via pip in Dockerfile)
+uv.lock
+pyproject.toml
+
+# Scrapy project (not needed for the UI)
+allecijfers/allecijfers/
+allecijfers/scrapy.cfg
+scrape_hierarchy.py
+
+# Tests and docs
+tests/
+docs/
+
+# Misc
+.claude/
+README.md
+TODO.md
+CLAUDE.md
