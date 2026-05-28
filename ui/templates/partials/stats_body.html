@@ -1,0 +1,52 @@
+<div id="stats-body">
+{% if stats %}
+  {% for category, rows in stats.items() %}
+  <details class="collapse collapse-arrow bg-base-100 shadow-sm mb-2 rounded-2xl overflow-hidden" open>
+    <summary class="collapse-title font-semibold text-sm min-h-0 py-3 px-4">
+      {% if category == "_starred" %}
+        ★ {% if lang == "en" %}Starred{% else %}Favorieten{% endif %}
+      {% else %}
+        {{ translate(category, lang) }}
+      {% endif %}
+    </summary>
+    <div class="collapse-content p-0">
+      <table class="table table-sm">
+        <thead>
+          <tr class="text-xs text-base-content/40 uppercase tracking-wider">
+            <th class="w-8"></th>
+            <th>{% if lang == "en" %}Topic{% else %}Onderwerp{% endif %}</th>
+            <th>{% if lang == "en" %}Value{% else %}Waarde{% endif %}</th>
+            <th>{% if lang == "en" %}Year{% else %}Jaar{% endif %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+          <tr class="hover">
+            <td class="w-8 pr-0">
+              <form hx-post="/area/{{ slug }}/star" hx-target="#stats-body" hx-swap="outerHTML"
+                hx-include="[name='q']">
+                <input type="hidden" name="topic" value="{{ row.topic }}">
+                <button type="submit"
+                  class="btn btn-ghost btn-xs p-0 w-7 h-7 min-h-0 text-base {% if row.topic in starred %}text-warning opacity-100{% else %}opacity-20 hover:opacity-60{% endif %}">
+                  {% if row.topic in starred %}★{% else %}☆{% endif %}
+                </button>
+              </form>
+            </td>
+            <td class="text-sm">{{ translate(row.topic, lang) }}</td>
+            <td class="text-sm font-medium">
+              {{ row.value }}{% if row.unit and row.unit not in skip_units %}<span class="text-xs text-base-content/40 ml-0.5">{{ row.unit }}</span>{% endif %}
+            </td>
+            <td class="text-xs text-base-content/30">{{ row.year or "" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  {% endfor %}
+{% else %}
+  <div class="text-center py-12 text-base-content/40 text-sm">
+    {% if lang == "en" %}No statistics found{% else %}Geen statistieken gevonden{% endif %}
+  </div>
+{% endif %}
+</div>

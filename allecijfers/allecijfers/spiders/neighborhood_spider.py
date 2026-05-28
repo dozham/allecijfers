@@ -1,6 +1,6 @@
 import scrapy
 from datetime import datetime, timezone
-from allecijfers.items import StatsItem
+from allecijfers.items import HierarchyItem, StatsItem
 
 
 class NeighborhoodSpider(scrapy.Spider):
@@ -73,3 +73,20 @@ class NeighborhoodSpider(scrapy.Spider):
 
         if not found_any:
             self.logger.warning("No stats tables found at %s", response.url)
+
+        if area_type == "wijk":
+            for href in response.css("a[href]::attr(href)").getall():
+                if "/buurt/" not in href:
+                    continue
+                buurt_slug = href.rstrip("/").rsplit("/", 1)[-1]
+                buurt_name = response.css(
+                    f"a[href*='/{buurt_slug}/']::text"
+                ).get("").strip()
+                if buurt_slug and buurt_name:
+                    yield HierarchyItem(
+                        municipality=self.municipality,
+                        wijk_slug=path,
+                        wijk_name=area_name,
+                        buurt_slug=buurt_slug,
+                        buurt_name=buurt_name,
+                    )

@@ -1,0 +1,45 @@
+<div id="results">
+{% if results %}
+  <div class="card bg-base-100 shadow-sm overflow-hidden">
+    <ul class="divide-y divide-base-200">
+    {% for r in results %}
+      <li>
+        <a href="/area/{{ r.area_slug }}" class="flex justify-between items-center px-4 py-3 hover:bg-base-200 transition-colors">
+          <span class="font-medium text-sm">{{ r.area_name }}</span>
+          <span class="flex items-center gap-2 text-xs text-base-content/50">
+            <span class="badge badge-ghost badge-sm text-xs">{{ translate(r.area_type, lang) }}</span>
+            {{ r.municipality }}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+
+    {% set last_page = ((total - 1) // per_page) + 1 %}
+    {% if last_page > 1 %}
+    <div class="flex items-center justify-center gap-3 px-4 py-3 border-t border-base-200">
+      {% if page > 1 %}
+      <button class="btn btn-sm btn-ghost rounded-full"
+        hx-get="/search?q={{ q }}&municipality={{ municipality }}&type={{ type }}&page={{ page - 1 }}"
+        hx-target="#results" hx-swap="outerHTML">
+        ← {% if lang == "en" %}Previous{% else %}Vorige{% endif %}
+      </button>
+      {% endif %}
+      <span class="text-xs text-base-content/40">{{ page }} / {{ last_page }}</span>
+      {% if page < last_page %}
+      <button class="btn btn-sm btn-ghost rounded-full"
+        hx-get="/search?q={{ q }}&municipality={{ municipality }}&type={{ type }}&page={{ page + 1 }}"
+        hx-target="#results" hx-swap="outerHTML">
+        {% if lang == "en" %}Next{% else %}Volgende{% endif %} →
+      </button>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+{% else %}
+  <div class="text-center py-12 text-base-content/40 text-sm">
+    {% if lang == "en" %}No results{% else %}Geen resultaten{% endif %}
+  </div>
+{% endif %}
+</div>

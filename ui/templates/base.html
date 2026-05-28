@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" data-theme="{{ theme }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}AlleCijfers{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-base-200 min-h-screen">
+
+  <div class="navbar bg-base-100 shadow-sm sticky top-0 z-50 px-4">
+    <div class="navbar-start">
+      <a href="/" class="text-lg font-bold tracking-tight">AlleCijfers</a>
+    </div>
+    <div class="navbar-end gap-1">
+      {% if compare_slugs %}
+      <a href="/compare" class="btn btn-sm btn-ghost rounded-full gap-1">
+        ⊞ {% if lang == "en" %}Compare{% else %}Vergelijk{% endif %}
+        <span class="badge badge-sm">{{ compare_slugs | length }}</span>
+      </a>
+      {% endif %}
+      <form method="POST" action="/set-theme">
+        <button name="theme" value="{{ 'light' if theme == 'dark' else 'dark' }}"
+          class="btn btn-ghost btn-sm btn-circle" aria-label="Toggle theme">
+          {% if theme == "dark" %}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          {% endif %}
+        </button>
+      </form>
+      <form method="POST" action="/set-lang">
+        {% if lang == "nl" %}
+          <button name="lang" value="en" class="btn btn-ghost btn-sm rounded-full">EN</button>
+        {% else %}
+          <button name="lang" value="nl" class="btn btn-ghost btn-sm rounded-full">NL</button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+
+  <main class="{% block main_class %}max-w-3xl mx-auto{% endblock %} px-4 py-8">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

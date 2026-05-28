@@ -13,3 +13,11 @@ class StatsItem(scrapy.Item):
     unit         = scrapy.Field()  # third <td>
     year         = scrapy.Field()  # fourth <td>
     scraped_at   = scrapy.Field()  # ISO-8601 UTC timestamp
+
+
+class HierarchyItem(scrapy.Item):
+    municipality = scrapy.Field()
+    wijk_slug    = scrapy.Field()
+    wijk_name    = scrapy.Field()
+    buurt_slug   = scrapy.Field()
+    buurt_name   = scrapy.Field()

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == "en" %}Compare areas{% else %}Vergelijk gebieden{% endif %} · AlleCijfers{% endblock %}
+{% block main_class %}w-full{% endblock %}
+
+{% block content %}
+
+<div class="flex items-center justify-between mb-6">
+  <h1 class="text-3xl font-bold tracking-tight">
+    {% if lang == "en" %}Compare{% else %}Vergelijken{% endif %}
+    {% if compare_slugs %}
+      <span class="text-base-content/40 text-xl font-normal ml-1">{{ compare_slugs | length }}
+        {% if lang == "en" %}areas{% else %}gebieden{% endif %}
+      </span>
+    {% endif %}
+  </h1>
+  {% if compare_slugs %}
+  <form method="POST" action="/compare/clear">
+    <button class="btn btn-sm btn-ghost rounded-full text-base-content/50">
+      {% if lang == "en" %}Clear all{% else %}Wis alles{% endif %}
+    </button>
+  </form>
+  {% endif %}
+</div>
+
+{% if not compare_slugs %}
+  <div class="text-center py-16 text-base-content/40">
+    <p class="text-lg mb-2">{% if lang == "en" %}No areas selected{% else %}Geen gebieden geselecteerd{% endif %}</p>
+    <p class="text-sm">
+      {% if lang == "en" %}Browse an area and click "+ Add to compare"{% else %}Ga naar een gebied en klik op "+ Vergelijk"{% endif %}
+    </p>
+  </div>
+{% elif not starred %}
+  <div class="text-center py-16 text-base-content/40">
+    <p class="text-lg mb-2">{% if lang == "en" %}No starred topics{% else %}Geen favoriete onderwerpen{% endif %}</p>
+    <p class="text-sm">
+      {% if lang == "en" %}Star topics on an area page first{% else %}Markeer eerst onderwerpen op een gebiedspagina{% endif %}
+    </p>
+  </div>
+{% elif compare_slugs | length < 2 %}
+  <div class="text-center py-16 text-base-content/40">
+    <p class="text-lg mb-2">{% if lang == "en" %}Add at least one more area{% else %}Voeg nog een gebied toe{% endif %}</p>
+    <p class="text-sm">
+      {% if lang == "en" %}Select at least 2 areas to compare{% else %}Selecteer minimaal 2 gebieden om te vergelijken{% endif %}
+    </p>
+  </div>
+{% else %}
+
+  <div class="overflow-x-auto rounded-2xl shadow-sm bg-base-100">
+    <table class="table table-sm">
+      <thead>
+        <tr class="text-xs text-base-content/40 uppercase tracking-wider">
+          <th class="min-w-40">{% if lang == "en" %}Topic{% else %}Onderwerp{% endif %}</th>
+          {% for slug in compare_slugs %}
+            {% set m = areas_meta.get(slug) %}
+            <th class="min-w-36">
+              {% if m %}
+                <div>
+                  <a href="/area/{{ slug }}" class="font-semibold text-base-content hover:text-primary">{{ m.area_name }}</a>
+                  <div class="flex items-center gap-1 mt-0.5 flex-wrap">
+                    <span class="badge badge-xs">{{ translate(m.area_type, lang) }}</span>
+                    <span class="text-base-content/30">{{ m.municipality }}</span>
+                  </div>
+                </div>
+                <form method="POST" action="/compare/remove" class="mt-1">
+                  <input type="hidden" name="slug" value="{{ slug }}">
+                  <button class="btn btn-xs btn-ghost rounded-full text-base-content/30 hover:text-error p-0 h-5 min-h-0">
+                    ✕
+                  </button>
+                </form>
+              {% else %}
+                {{ slug }}
+              {% endif %}
+            </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for topic in starred %}
+          {% set row_data = comparison.get(topic, {}) %}
+          <tr class="hover">
+            <td class="text-sm font-medium">{{ translate(topic, lang) }}</td>
+            {% for slug in compare_slugs %}
+              {% set cell = row_data.get(slug) %}
+              {% set score = scores.get(topic, {}).get(slug) %}
+              <td class="text-sm
+                {%- if score is not none and score < 0.33 %} bg-success/20 text-success font-semibold
+                {%- elif score is not none and score > 0.67 %} bg-error/20 text-error font-semibold
+                {%- endif %}">
+                {% if cell %}
+                  {{ cell.value }}{% if cell.unit and cell.unit not in skip_units %}<span class="text-xs text-base-content/40 ml-0.5">{{ cell.unit }}</span>{% endif %}
+                  {% if cell.year %}<span class="text-xs text-base-content/30 ml-1">{{ cell.year }}</span>{% endif %}
+                {% else %}
+                  <span class="text-base-content/20">—</span>
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% endif %}
+
+{% endblock %}

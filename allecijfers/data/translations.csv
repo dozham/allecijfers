@@ -1,0 +1,491 @@
+dutch,english
+Bedrijven,Businesses
+Bevolking,Demographics
+Energieverbruik,Energy use
+Gezondheid-gedrag,Health behaviour
+Gezondheid-overig,Health other
+Gezondheid-ziekte,Health illness
+Huishoudens,Households
+Inkomen,Income
+Migratie,Migration
+Misdrijven,Crime
+Nabijheid voorzieningen,Proximity to amenities
+Omgeving,Environment
+Verkeersongevallen,Traffic accidents
+Vervoer,Transport
+Woningen,Housing
+buurt,neighbourhood
+wijk,district
+gemeente,municipality
+% A Landbouw, bosbouw en visserij,% A Agriculture, forestry, and fishing
+% B-F Nijverheid en energie,% B-F Industry and energy
+% G+I Handel en horeca,% G+I Trade and hospitality
+% H+J Vervoer, informatie en communicatie,% H+J Transport, information, and communication
+% K-L Financiële diensten, onroerend goed,% K-L Financial services, real estate
+% M-N Zakelijke dienstverlening,% M-N Business services
+% O-Q Overheid, onderwijs en zorg,% O-Q Government, education, and healthcare
+% R-U Cultuur, recreatie, overige diensten,% R-U Culture, recreation, and other services
+A Landbouw, bosbouw en visserij,A Agriculture, forestry, and fishing
+B-F Nijverheid en energie,B-F Industry and energy
+Bedrijfsvestigingen totaal,Business establishments total
+G+I Handel en horeca,G+I Trade and hospitality
+H+J Vervoer, informatie en communicatie,H+J Transport, information, and communication
+K-L Financiële diensten, onroerend goed,K-L Financial services, real estate
+M-N Zakelijke dienstverlening,M-N Business services
+O-Q Overheid, onderwijs en zorg,O-Q Government, education, and healthcare
+R-U Cultuur, recreatie, overige diensten,R-U Culture, recreation, and other services
+% 0 tot 15 jaar,% 0 to 15 years
+% 15 tot 25 jaar,% 15 to 25 years
+% 25 tot 45 jaar,% 25 to 45 years
+% 45 tot 65 jaar,% 45 to 65 years
+% 65 jaar of ouder,% 65 years or older
+% Gehuwd,% Married
+% Gescheiden,% Divorced
+% Hoger opleidingsniveau,% Higher education level
+% Jongeren met jeugdzorg,% Youth with youth care
+% Mannen,% Men
+% Middelbaar opleidingsniveau,% Intermediate education level
+% Ongehuwd,% Unmarried
+% Praktisch opleidingsniveau,% Practical education level
+% Verweduwd,% Widowed
+% Vrouwen,% Women
+0 tot 15 jaar,0 to 15 years
+15 tot 25 jaar,15 to 25 years
+25 tot 45 jaar,25 to 45 years
+45 tot 65 jaar,45 to 65 years
+65 jaar of ouder,65 years or older
+Bevolkingsdichtheid,Population density
+Geboorte relatief,Birth rate
+Geboorten,Births
+Gehuwd,Married
+Gescheiden,Divorced
+Hoger opleidingsniveau,Higher education level
+Inwoners,Residents
+Jongeren met jeugdzorg in natura,Youth with in-kind youth care
+Leerlingen PO,Primary school pupils
+Leerlingen VO,Secondary school pupils
+Mannen,Men
+Middelbaar opleidingsniveau,Intermediate education level
+Ongehuwd,Unmarried
+Praktisch opleidingsniveau,Practical education level
+Sterfte relatief,Mortality rate
+Sterftes,Deaths
+Studenten HBO,Higher vocational students
+Studenten MBO,Intermediate vocational students
+Studenten WO,University students
+Verweduwd,Widowed
+Vrouwen,Women
+Wmo cliënten,Social support act clients
+Wmo cliënten per 1.000 inwoners,Social support act clients per 1,000 residents
+% Aardgasvrije woningen,% Gas-free homes
+% Aardgaswoningen,% Gas-heated homes
+% Woningen hoofdzakelijk elektrisch verwarmd,% Homes mainly electrically heated
+% Woningen met stadsverwarming,% Homes with district heating
+% Woningen met zonnestroom,% Homes with solar power
+Adressen met definitief energielabel,Addresses with final energy label
+Adressen met voorlopig energielabel,Addresses with provisional energy label
+Adressen zonder energielabel,Addresses without energy label
+Energielabels A,Energy labels A
+Energielabels A+,Energy labels A+
+Energielabels A++,Energy labels A++
+Energielabels A+++,Energy labels A+++
+Energielabels A++++,Energy labels A++++
+Energielabels A+++++,Energy labels A+++++
+Energielabels B,Energy labels B
+Energielabels C,Energy labels C
+Energielabels D,Energy labels D
+Energielabels E,Energy labels E
+Energielabels F,Energy labels F
+Energielabels G,Energy labels G
+Gemiddeld aardgasverbruik appartement,Average gas consumption apartment
+Gemiddeld aardgasverbruik hoekwoning,Average gas consumption corner house
+Gemiddeld aardgasverbruik huurwoning,Average gas consumption rental home
+Gemiddeld aardgasverbruik koopwoning,Average gas consumption owner-occupied home
+Gemiddeld aardgasverbruik per woning,Average gas consumption per home
+Gemiddeld aardgasverbruik tussenwoning,Average gas consumption terraced house
+Gemiddeld aardgasverbruik twee-onder-één-kap woning,Average gas consumption semi-detached home
+Gemiddeld aardgasverbruik vrijstaande woning,Average gas consumption detached home
+Gemiddelde elektriciteitslevering appartement,Average electricity delivery apartment
+Gemiddelde elektriciteitslevering hoekwoning,Average electricity delivery corner house
+Gemiddelde elektriciteitslevering huurwoning,Average electricity delivery rental home
+Gemiddelde elektriciteitslevering koopwoning,Average electricity delivery owner-occupied home
+Gemiddelde elektriciteitslevering per woning,Average electricity delivery per home
+Gemiddelde elektriciteitslevering tussenwoning,Average electricity delivery terraced house
+Gemiddelde elektriciteitslevering twee-onder-één-kap woning,Average electricity delivery semi-detached home
+Gemiddelde elektriciteitslevering vrijstaande woning,Average electricity delivery detached home
+Gemiddelde elektriciteitsteruglevering per woning,Average electricity feed-back per home
+Publieke laadpalen,Public charging stations
+Drinken,Drinking
+Ernstig overgewicht (obesitas),Severe overweight (obesity)
+Fietsen naar school of werk,Cycling to school or work
+Lopen en/of fietsen naar school of werk,Walking and/or cycling to school or work
+Lopen naar school of werk,Walking to school or work
+Overgewicht,Overweight
+Overmatig drinken,Excessive drinking
+Rookt tabak,Tobacco smoking
+Voldoet aan de alcoholrichtlijn,Meets alcohol guideline
+Voldoet aan de beweegrichtlijn,Meets physical activity guideline
+Wekelijks sporten,Weekly sport participation
+Zwaar drinken,Heavy drinking
+Eenzaam,Lonely
+Emotioneel eenzaam,Emotionally lonely
+Ernstig eenzaam,Severely lonely
+Ernstige geluidhinder door buren,Serious noise nuisance from neighbours
+Ernstige geluidhinder door treinverkeer,Serious noise nuisance from train traffic
+Ernstige geluidhinder door vliegverkeer,Serious noise nuisance from air traffic
+Ernstige geluidhinder door wegverkeer,Serious noise nuisance from road traffic
+Ernstige geluidhinder door windturbines,Serious noise nuisance from wind turbines
+Ernstige geluidhinder weg <50 km/uur,Serious noise nuisance roads <50 km/h
+Ernstige geluidhinder weg >50 km/uur,Serious noise nuisance roads >50 km/h
+Ernstige slaapverstoring buren,Serious sleep disruption from neighbours
+Ernstige slaapverstoring treinverkeer,Serious sleep disruption from train traffic
+Ernstige slaapverstoring vliegverkeer,Serious sleep disruption from air traffic
+Ernstige slaapverstoring wegverkeer,Serious sleep disruption from road traffic
+Kan goed verkoeling vinden binnen,Can find adequate cooling indoors
+Kan goed verkoeling vinden buiten,Can find adequate cooling outdoors
+Krijgt steun van anderen,Receives support from others
+Mantelzorger,Informal caregiver
+Matig/veel regie over het eigen leven,Moderate/high control over own life
+Moeite met rondkomen,Difficulty making ends meet
+Sociaal eenzaam,Socially lonely
+Tevreden met de woning,Satisfied with housing
+Tevreden met de woonomgeving,Satisfied with living environment
+Tevreden met het groen in de omgeving,Satisfied with green spaces in area
+Vrijwilligerswerk,Volunteer work
+(Heel) veel stress in afgelopen 4 weken,(Very) high stress in past 4 weeks
+Beperking in bewegen,Mobility limitation
+Beperking in horen,Hearing limitation
+Beperking in zien,Visual limitation
+Beperkt vanwege gezondheid,Limited due to health
+Broze gezondheid,Frail health
+Broze gezondheid in het sociale domein,Frail health in social domain
+Broze lichamelijke gezondheid,Frail physical health
+Broze metale gezondheid,Frail mental health
+Ernstig beperkt vanwege gezondheid,Severely limited due to health
+Goed ervaren gezondheid,Good self-reported health
+Hoge veerkracht,High resilience
+Hoog risico op angst of depressie,High risk of anxiety or depression
+Lage veerkracht,Low resilience
+Langdurige ziekte en beperkt,Chronic illness and limited
+Suïcide gedachten de laatste 12 maanden,Suicidal thoughts in past 12 months
+Één of meer langdurige aandoeningen,One or more chronic conditions
+Één of meer lichamelijke beperkingen,One or more physical limitations
+Één of meerdere keren gevallen,Fallen one or more times
+% Eenpersoonshuishoudens,% Single-person households
+% Meerpersoonshuishoudens,% Multi-person households
+% Meerpersoonshuishoudens met kinderen,% Multi-person households with children
+% Meerpersoonshuishoudens zonder kinderen,% Multi-person households without children
+Eenpersoonshuishoudens,Single-person households
+Gemiddelde huishoudensgrootte,Average household size
+Huishoudens,Households
+Meerpersoonshuishoudens,Multi-person households
+Meerpersoonshuishoudens met kinderen,Multi-person households with children
+Meerpersoonshuishoudens zonder kinderen,Multi-person households without children
+% Huishoudens met een laag inkomen,% Households with low income
+% Huishoudens onder of rond sociaal minimum,% Households at or below social minimum
+% Huishoudens tot 110% van sociaal minimum,% Households up to 110% of social minimum
+% Huishoudens tot 120% van sociaal minimum,% Households up to 120% of social minimum
+% Personen in armoede,% Persons in poverty
+% Personen per soort uitkering - AO,% Persons by benefit type - disability
+% Personen per soort uitkering - AOW,% Persons by benefit type - state pension
+% Personen per soort uitkering - Bijstand,% Persons by benefit type - social assistance
+% Personen per soort uitkering - WW,% Persons by benefit type - unemployment
+% Personen tot 25% boven armoedegrens,% Persons up to 25% above poverty line
+% Werknemers,% Employees
+% Werknemers met flexibele arbeidsrelatie,% Employees with flexible contract
+% Werknemers met vaste arbeidsrelatie,% Employees with permanent contract
+% Zelfstandigen,% Self-employed
+20% huishoudens met hoogste inkomen,Top 20% households by income
+20% personen met hoogste inkomen,Top 20% persons by income
+40% huishoudens met laagste inkomen,Bottom 40% households by income
+40% personen met laagste inkomen,Bottom 40% persons by income
+Gemiddeld huishoudinkomen,Average household income
+Gemiddeld inkomen per inkomensontvanger,Average income per income recipient
+Gemiddeld inkomen per inwoner,Average income per resident
+Inkomensontvangers,Income recipients
+Inkomensontvangers per 1.000 inwoners,Income recipients per 1,000 residents
+Mediaan vermogen van particuliere huishoudens,Median wealth of private households
+Netto arbeidsparticipatie,Net labour participation
+Personen per soort uitkering - AO,Persons by benefit type - disability
+Personen per soort uitkering - AOW,Persons by benefit type - state pension
+Personen per soort uitkering - Bijstand,Persons by benefit type - social assistance
+Personen per soort uitkering - WW,Persons by benefit type - unemployment
+Werkzame beroepsbevolking,Working population
+% Geboren buiten Nederland,% Born outside Netherlands
+% Geboren buiten Nederland met herkomst Europa,% Born outside Netherlands with European origin
+% Geboren buiten Nederland met herkomst buiten Europa,% Born outside Netherlands with non-European origin
+% Geboren in Nederland,% Born in Netherlands
+% Geboren in Nederland met herkomst Europa,% Born in Netherlands with European origin
+% Geboren in Nederland met herkomst Nederland,% Born in Netherlands with Dutch origin
+% Geboren in Nederland met herkomst buiten Europa,% Born in Netherlands with non-European origin
+% Geboren in Nederland met herkomst buiten Nederland,% Born in Netherlands with non-Dutch origin
+% Herkomst Europa,% European origin
+% Herkomst Nederland,% Dutch origin
+% Herkomst buiten Europa,% Non-European origin
+% Herkomst buiten Nederland,% Non-Dutch origin
+Autochtoon,Native Dutch
+Geboren buiten Nederland,Born outside Netherlands
+Geboren buiten Nederland met herkomst Europa,Born outside Netherlands with European origin
+Geboren buiten Nederland met herkomst buiten Europa,Born outside Netherlands with non-European origin
+Geboren in Nederland,Born in Netherlands
+Geboren in Nederland met herkomst Europa,Born in Netherlands with European origin
+Geboren in Nederland met herkomst Nederland,Born in Netherlands with Dutch origin
+Geboren in Nederland met herkomst buiten Europa,Born in Netherlands with non-European origin
+Geboren in Nederland met herkomst buiten Nederland,Born in Netherlands with non-Dutch origin
+Herkomst Europa,European origin
+Herkomst Nederland,Dutch origin
+Herkomst buiten Europa,Non-European origin
+Herkomst buiten Nederland,Non-Dutch origin
+Marokko,Morocco
+Nederlandse Antillen en Aruba,Netherlands Antilles and Aruba
+Niet-westers,Non-western
+Overig niet-westers,Other non-western
+Suriname,Suriname
+Turkije,Turkey
+Westers,Western
+Diefstal,Theft
+Diefstal per 1.000 inwoners,Theft per 1,000 residents
+Geweld en seksmisdrijven,Violence and sex crimes
+Geweld en seksmisdrijven per 1.000 inwoners,Violence and sex crimes per 1,000 residents
+Milieu overtredingen,Environmental violations
+Milieu overtredingen per 1.000 inwoners,Environmental violations per 1,000 residents
+Misdrijven,Crimes
+Misdrijven per 1.000 inwoners,Crimes per 1,000 residents
+Oplichting,Fraud
+Oplichting per 1.000 inwoners,Fraud per 1,000 residents
+Overige misdrijven,Other crimes
+Overige misdrijven per 1.000 inwoners,Other crimes per 1,000 residents
+Verkeersovertredingen,Traffic violations
+Verkeersovertredingen per 1.000 inwoners,Traffic violations per 1,000 residents
+Vernieling,Vandalism
+Vernieling per 1.000 inwoners,Vandalism per 1,000 residents
+Apotheek afstand,Pharmacy distance
+Attractie afstand,Attraction distance
+Attracties binnen 10 km,Attractions within 10 km
+Attracties binnen 20 km,Attractions within 20 km
+Attracties binnen 50 km,Attractions within 50 km
+Basisonderwijs afstand,Primary school distance
+Basisonderwijs binnen 1 km,Primary schools within 1 km
+Basisonderwijs binnen 3 km,Primary schools within 3 km
+Basisonderwijs binnen 5 km,Primary schools within 5 km
+Begraafplaats afstand,Cemetery distance
+Belangrijk overstapstation afstand,Major transfer station distance
+Bibliotheek afstand,Library distance
+Bioscoop afstand,Cinema distance
+Bioscopen binnen 10 km,Cinemas within 10 km
+Bioscopen binnen 20 km,Cinemas within 20 km
+Bioscopen binnen 5 km,Cinemas within 5 km
+Bos afstand,Forest distance
+Brandweerkazerne afstand,Fire station distance
+Buitenschoolseopvang afstand,After-school care distance
+Buitenschoolseopvang binnen 1 km,After-school care within 1 km
+Buitenschoolseopvang binnen 3 km,After-school care within 3 km
+Buitenschoolseopvang binnen 5 km,After-school care within 5 km
+Cafetaria afstand,Cafeteria distance
+Cafetaria binnen 1 km,Cafeterias within 1 km
+Cafetaria binnen 3 km,Cafeterias within 3 km
+Cafetaria binnen 5 km,Cafeterias within 5 km
+Café afstand,Café distance
+Cafés binnen 1 km,Cafés within 1 km
+Cafés binnen 3 km,Cafés within 3 km
+Cafés binnen 5 km,Cafés within 5 km
+Dagrecreatief terrein afstand,Day recreation area distance
+HAVO VWO afstand,HAVO/VWO school distance
+HAVO VWO binnen 10 km,HAVO/VWO schools within 10 km
+HAVO VWO binnen 3 km,HAVO/VWO schools within 3 km
+HAVO VWO binnen 5 km,HAVO/VWO schools within 5 km
+Hotel afstand,Hotel distance
+Hotels binnen 10 km,Hotels within 10 km
+Hotels binnen 20 km,Hotels within 20 km
+Hotels binnen 5 km,Hotels within 5 km
+Huisartsenpost afstand,GP out-of-hours post distance
+Huisartsenpraktijk afstand,GP practice distance
+Huisartsenpraktijken binnen 1 km,GP practices within 1 km
+Huisartsenpraktijken binnen 3 km,GP practices within 3 km
+Huisartsenpraktijken binnen 5 km,GP practices within 5 km
+Kinderdagverblijf afstand,Childcare centre distance
+Kinderdagverblijven binnen 1 km,Childcare centres within 1 km
+Kinderdagverblijven binnen 3 km,Childcare centres within 3 km
+Kinderdagverblijven binnen 5 km,Childcare centres within 5 km
+Kunstijsbaan afstand,Ice rink distance
+Musea binnen 10 km,Museums within 10 km
+Musea binnen 20 km,Museums within 20 km
+Musea binnen 5 km,Museums within 5 km
+Museum afstand,Museum distance
+Open droog natuurlijk terrein afstand,Open dry natural area distance
+Open nat natuurlijk terrein afstand,Open wet natural area distance
+Open natuurlijk terrein afstand,Open natural area distance
+Openbaar groen afstand,Public green space distance
+Oprit hoofdverkeersweg afstand,Motorway on-ramp distance
+Overige dagelijkse levensmiddelen afstand,Other daily groceries distance
+Overige dagelijkse levensmiddelen binnen 1 km,Other daily groceries within 1 km
+Overige dagelijkse levensmiddelen binnen 3 km,Other daily groceries within 3 km
+Overige dagelijkse levensmiddelen binnen 5 km,Other daily groceries within 5 km
+Park of plantsoen afstand,Park or garden distance
+Podiumkunsten afstand,Performing arts distance
+Podiumkunsten binnen 10 km,Performing arts within 10 km
+Podiumkunsten binnen 20 km,Performing arts within 20 km
+Podiumkunsten binnen 5 km,Performing arts within 5 km
+Poppodium afstand,Pop music venue distance
+Recreatief binnenwater afstand,Recreational inland water distance
+Restaurant afstand,Restaurant distance
+Restaurants binnen 1 km,Restaurants within 1 km
+Restaurants binnen 3 km,Restaurants within 3 km
+Restaurants binnen 5 km,Restaurants within 5 km
+Sauna afstand,Sauna distance
+Semi-openbaar groen afstand,Semi-public green space distance
+Sportterrein afstand,Sports ground distance
+Supermarkt afstand,Supermarket distance
+Supermarkten binnen 1 km,Supermarkets within 1 km
+Supermarkten binnen 3 km,Supermarkets within 3 km
+Supermarkten binnen 5 km,Supermarkets within 5 km
+Treinstation afstand,Train station distance
+VMBO afstand,VMBO school distance
+VMBO binnen 10 km,VMBO schools within 10 km
+VMBO binnen 3 km,VMBO schools within 3 km
+VMBO binnen 5 km,VMBO schools within 5 km
+Verblijfsrecreatief terrein afstand,Holiday recreation area distance
+Volkstuin afstand,Allotment garden distance
+Voortgezet onderwijs afstand,Secondary school distance
+Voortgezet onderwijs binnen 10 km,Secondary schools within 10 km
+Voortgezet onderwijs binnen 3 km,Secondary schools within 3 km
+Voortgezet onderwijs binnen 5 km,Secondary schools within 5 km
+Warenhuis afstand,Department store distance
+Warenhuizen binnen 10 km,Department stores within 10 km
+Warenhuizen binnen 20 km,Department stores within 20 km
+Warenhuizen binnen 5 km,Department stores within 5 km
+Ziekenhuis met poli afstand,Hospital with outpatient clinic distance
+Ziekenhuis zonder poli afstand,Hospital without outpatient clinic distance
+Ziekenhuizen met poli binnen 10 km,Hospitals with outpatient clinic within 10 km
+Ziekenhuizen met poli binnen 20 km,Hospitals with outpatient clinic within 20 km
+Ziekenhuizen met poli binnen 5 km,Hospitals with outpatient clinic within 5 km
+Ziekenhuizen zonder poli binnen 10 km,Hospitals without outpatient clinic within 10 km
+Ziekenhuizen zonder poli binnen 20 km,Hospitals without outpatient clinic within 20 km
+Ziekenhuizen zonder poli binnen 5 km,Hospitals without outpatient clinic within 5 km
+Zonnebank afstand,Tanning salon distance
+Zwembad afstand,Swimming pool distance
+Adressen binnen bebouwde kom,Addresses within built-up area
+Adressen buiten bebouwde kom,Addresses outside built-up area
+Adressen met bijeenkomstfunctie,Addresses with assembly function
+Adressen met celfunctie,Addresses with detention function
+Adressen met gezondheidszorgfunctie,Addresses with healthcare function
+Adressen met industriefunctie,Addresses with industrial function
+Adressen met kantoorfunctie,Addresses with office function
+Adressen met logiesfunctie,Addresses with accommodation function
+Adressen met onderwijsfunctie,Addresses with educational function
+Adressen met overige gebruiksfunctie,Addresses with other use function
+Adressen met pand,Addresses with building
+Adressen met pand 1700 tot 1900,Addresses with building 1700 to 1900
+Adressen met pand 1900 tot 1925,Addresses with building 1900 to 1925
+Adressen met pand 1925 tot 1950,Addresses with building 1925 to 1950
+Adressen met pand 1950 tot 1970,Addresses with building 1950 to 1970
+Adressen met pand 1970 tot 1980,Addresses with building 1970 to 1980
+Adressen met pand 1980 tot 1990,Addresses with building 1980 to 1990
+Adressen met pand 1990 tot 2000,Addresses with building 1990 to 2000
+Adressen met pand 2000 tot 2010,Addresses with building 2000 to 2010
+Adressen met pand 2010 tot 2020,Addresses with building 2010 to 2020
+Adressen met pand 2020 en later,Addresses with building 2020 and later
+Adressen met pand voor 1700,Addresses with building before 1700
+Adressen met perceel,Addresses with land parcel
+Adressen met postcode,Addresses with postcode
+Adressen met sportfunctie,Addresses with sports function
+Adressen met winkelfunctie,Addresses with retail function
+Adressen met woonfunctie,Addresses with residential function
+Adressen totaal,Total addresses
+Dekkingspercentage meest voorkomende postcode,Coverage of most common postcode
+Ligplaatsen,Moorings
+Mate van stedelijkheid,Degree of urbanisation
+Meest voorkomende postcode,Most common postcode
+Omgevingsadressendichtheid,Address density
+Oppervlakte land,Land area
+Oppervlakte totaal,Total area
+Oppervlakte water,Water area
+Panden met adres,Buildings with address
+Panden met adres 1700 tot 1900,Buildings with address 1700 to 1900
+Panden met adres 1900 tot 1925,Buildings with address 1900 to 1925
+Panden met adres 1925 tot 1950,Buildings with address 1925 to 1950
+Panden met adres 1950 tot 1970,Buildings with address 1950 to 1970
+Panden met adres 1970 tot 1980,Buildings with address 1970 to 1980
+Panden met adres 1980 tot 1990,Buildings with address 1980 to 1990
+Panden met adres 1990 tot 2000,Buildings with address 1990 to 2000
+Panden met adres 2000 tot 2010,Buildings with address 2000 to 2010
+Panden met adres 2010 tot 2020,Buildings with address 2010 to 2020
+Panden met adres 2020 en later,Buildings with address 2020 and later
+Panden met adres voor 1700,Buildings with address before 1700
+Percelen met adres,Land parcels with address
+Postcodegebied,Postcode area
+Regiocode,Region code
+Regionaam,Region name
+Soort regio,Region type
+Sorteercode,Sort code
+Standplaatsen,Stationary sites
+Verblijfsobjecten,Residential objects
+Woningen binnen bebouwde kom,Homes within built-up area
+Woningen buiten bebouwde kom,Homes outside built-up area
+Verkeersongevallen dodelijk,Fatal traffic accidents
+Verkeersongevallen letselschade,Traffic accidents with injuries
+Verkeersongevallen totaal,Total traffic accidents
+Verkeersongevallen uitsluitend materiële schade,Traffic accidents with property damage only
+Motorfietsen,Motorcycles
+Personenauto's - brandstof benzine,Passenger cars - petrol
+Personenauto's - overige brandstof,Passenger cars - other fuel
+Personenauto's naar oppervlakte,Passenger cars per area
+Personenauto's per huishouden,Passenger cars per household
+Personenauto's totaal,Total passenger cars
+% Appartementen,% Apartments
+% Bewoond,% Occupied
+% Eengezinswoningen,% Single-family homes
+% Eigendom onbekend,% Ownership unknown
+% Hoekwoningen,% Corner houses
+% Huurwoningen,% Rental homes
+% Huurwoningen overige verhuurders,% Rental homes other landlords
+% Huurwoningen woningcorporaties,% Social rental homes
+% Koopwoningen,% Owner-occupied homes
+% Meergezinswoningen,% Multi-family homes
+% Onbewoond,% Unoccupied
+% Tussenwoningen,% Terraced houses
+% Twee-onder-één-kap woningen,% Semi-detached homes
+% Vrijstaande woningen,% Detached homes
+% Woningen 1945 tot 1965,% Homes 1945 to 1965
+% Woningen 1965 tot 1975,% Homes 1965 to 1975
+% Woningen 1975 tot 1985,% Homes 1975 to 1985
+% Woningen 1985 tot 1995,% Homes 1985 to 1995
+% Woningen 1995 tot 2005,% Homes 1995 to 2005
+% Woningen 2005 tot 2015,% Homes 2005 to 2015
+% Woningen 2015 tot 2025,% Homes 2015 to 2025
+% Woningen 2025 en later,% Homes 2025 and later
+% Woningen bouwjaar onbekend,% Homes construction year unknown
+% Woningen voor 1945,% Homes before 1945
+% Woningtype onbekend,% Housing type unknown
+Appartementen,Apartments
+Bewoond,Occupied
+Eengezinswoningen,Single-family homes
+Eigendom onbekend,Ownership unknown
+Gemiddelde woningwaarde,Average home value
+Hoekwoningen,Corner houses
+Huurwoningen,Rental homes
+Huurwoningen overige verhuurders,Rental homes other landlords
+Huurwoningen woningcorporaties,Social rental homes
+Koopwoningen,Owner-occupied homes
+Meergezinswoningen,Multi-family homes
+Niet-woningvoorraad,Non-residential stock
+Nieuwbouw niet-woningen,New non-residential buildings
+Nieuwbouw woningen,New residential buildings
+Onbewoond,Unoccupied
+Tussenwoningen,Terraced houses
+Twee-onder-één-kap woningen,Semi-detached homes
+Vrijstaande woningen,Detached homes
+Woningen 1945 tot 1965,Homes 1945 to 1965
+Woningen 1965 tot 1975,Homes 1965 to 1975
+Woningen 1975 tot 1985,Homes 1975 to 1985
+Woningen 1985 tot 1995,Homes 1985 to 1995
+Woningen 1995 tot 2005,Homes 1995 to 2005
+Woningen 2005 tot 2015,Homes 2005 to 2015
+Woningen 2015 tot 2025,Homes 2015 to 2025
+Woningen 2025 en later,Homes 2025 and later
+Woningen bouwjaar onbekend,Homes construction year unknown
+Woningen per 1.000 inwoners,Homes per 1,000 residents
+Woningen voor 1945,Homes before 1945
+Woningtype onbekend,Housing type unknown
+Woningvoorraad,Housing stock
+Woningwaarde klasse,Home value class

@@ -1,6 +1,7 @@
 import sqlite3
 import os
 from itemadapter import ItemAdapter
+from allecijfers.items import HierarchyItem
 
 
 class SQLitePipeline:
@@ -38,9 +39,29 @@ class SQLitePipeline:
         self.conn.execute("CREATE INDEX IF NOT EXISTS idx_slug  ON stats(area_slug)")
         self.conn.execute("CREATE INDEX IF NOT EXISTS idx_type  ON stats(area_type)")
         self.conn.execute("CREATE INDEX IF NOT EXISTS idx_slug_type ON stats(area_slug, area_type);")
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS area_hierarchy (
+                municipality TEXT,
+                wijk_slug    TEXT,
+                wijk_name    TEXT,
+                buurt_slug   TEXT,
+                buurt_name   TEXT,
+                PRIMARY KEY (municipality, buurt_slug)
+            )
+        """)
         self.conn.commit()
 
     def process_item(self, item, spider=None):
+        if isinstance(item, HierarchyItem):
+            a = ItemAdapter(item)
+            self.conn.execute(
+                "INSERT OR REPLACE INTO area_hierarchy VALUES (?,?,?,?,?)",
+                (a["municipality"], a["wijk_slug"], a["wijk_name"],
+                 a["buurt_slug"], a["buurt_name"]),
+            )
+            self.conn.commit()
+            return item
+
         a = ItemAdapter(item)
         self.buffer.append((
             a.get("municipality"),
