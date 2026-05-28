@@ -6,8 +6,9 @@ import re
 import sqlite3
 import sys
 import urllib.request
+from pathlib import Path
 
-DB_PATH = "data/allecijfers.db"
+DB_PATH = Path(__file__).parent / "allecijfers" / "data" / "allecijfers.db"
 MUNICIPALITIES = ["amsterdam", "haarlem", "utrecht"]
 BASE_URL = "https://allecijfers.nl/gemeente-overzicht/{municipality}/"
 HEADERS = {"User-Agent": "Mozilla/5.0"}

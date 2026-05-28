@@ -11,6 +11,7 @@ import ui.db as db
 
 _HERE = Path(__file__).parent
 _PROJECT_ROOT = _HERE.parent
+_background_tasks: set = set()
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory=_HERE / "static"), name="static")
@@ -286,7 +287,9 @@ async def crawl_start(request: Request):
     municipality = str(form.get("crawl_municipality", "")).strip().lower()
     if not municipality or not re.fullmatch(r"[a-z0-9-]+", municipality):
         return HTMLResponse('<div class="alert alert-error text-sm">Invalid municipality name.</div>')
-    asyncio.create_task(_launch_crawl(municipality))
+    task = asyncio.create_task(_launch_crawl(municipality))
+    _background_tasks.add(task)
+    task.add_done_callback(_background_tasks.discard)
     return HTMLResponse(
         f'<div class="alert alert-success text-sm">'
         f'Crawl started for <strong>{municipality}</strong>. Runs in the background.'
