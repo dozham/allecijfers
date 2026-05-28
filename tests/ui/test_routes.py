@@ -218,7 +218,7 @@ def test_area_page_shows_in_comparison_when_added(client):
 def test_crawl_start_valid_municipality(client, monkeypatch):
     mock = AsyncMock()
     monkeypatch.setattr("ui.main._launch_crawl", mock)
-    resp = client.post("/crawl/start", data={"municipality": "rotterdam"})
+    resp = client.post("/crawl/start", data={"crawl_municipality": "rotterdam"})
     assert resp.status_code == 200
     assert "rotterdam" in resp.text
     assert "alert-success" in resp.text
@@ -228,7 +228,7 @@ def test_crawl_start_valid_municipality(client, monkeypatch):
 def test_crawl_start_normalizes_input(client, monkeypatch):
     mock = AsyncMock()
     monkeypatch.setattr("ui.main._launch_crawl", mock)
-    resp = client.post("/crawl/start", data={"municipality": "  Rotterdam  "})
+    resp = client.post("/crawl/start", data={"crawl_municipality": "  Rotterdam  "})
     assert resp.status_code == 200
     assert "rotterdam" in resp.text
     assert "alert-success" in resp.text
@@ -236,13 +236,13 @@ def test_crawl_start_normalizes_input(client, monkeypatch):
 
 
 def test_crawl_start_empty_municipality_returns_error(client):
-    resp = client.post("/crawl/start", data={"municipality": ""})
+    resp = client.post("/crawl/start", data={"crawl_municipality": ""})
     assert resp.status_code == 200
     assert "alert-error" in resp.text
 
 
 def test_crawl_start_invalid_chars_returns_error(client):
-    resp = client.post("/crawl/start", data={"municipality": "den haag!"})
+    resp = client.post("/crawl/start", data={"crawl_municipality": "den haag!"})
     assert resp.status_code == 200
     assert "alert-error" in resp.text
 

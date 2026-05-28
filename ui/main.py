@@ -283,7 +283,7 @@ async def _launch_crawl(municipality: str) -> None:
 @app.post("/crawl/start", response_class=HTMLResponse)
 async def crawl_start(request: Request):
     form = await request.form()
-    municipality = str(form.get("municipality", "")).strip().lower()
+    municipality = str(form.get("crawl_municipality", "")).strip().lower()
     if not municipality or not re.fullmatch(r"[a-z0-9-]+", municipality):
         return HTMLResponse('<div class="alert alert-error text-sm">Invalid municipality name.</div>')
     asyncio.create_task(_launch_crawl(municipality))

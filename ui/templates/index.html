@@ -68,7 +68,8 @@
   </div>
   <button onclick="document.getElementById('crawl-modal').showModal()"
     class="btn btn-sm btn-circle btn-ghost flex-shrink-0"
-    title="{% if lang == 'en' %}Crawl new municipality{% else %}Nieuwe gemeente crawlen{% endif %}">+</button>
+    title="{% if lang == 'en' %}Crawl new municipality{% else %}Nieuwe gemeente crawlen{% endif %}"
+    aria-label="{% if lang == 'en' %}Crawl new municipality{% else %}Nieuwe gemeente crawlen{% endif %}">+</button>
 </div>
 
 {# Crawl modal #}
@@ -79,11 +80,11 @@
     </h3>
     <form hx-post="/crawl/start" hx-target="#crawl-result" hx-swap="innerHTML">
       <label class="input input-bordered flex items-center gap-2 rounded-full mb-4 bg-base-100">
-        <input type="text" name="municipality" class="grow"
+        <input type="text" name="crawl_municipality" class="grow" autofocus
           placeholder="{% if lang == 'en' %}e.g. rotterdam{% else %}bijv. rotterdam{% endif %}">
       </label>
       <button type="submit" class="btn btn-primary btn-sm rounded-full">
-        {% if lang == "en" %}Start crawl{% else %}Start crawl{% endif %}
+        {% if lang == "en" %}Start crawl{% else %}Start crawlen{% endif %}
       </button>
     </form>
     <div id="crawl-result" class="mt-4"></div>
