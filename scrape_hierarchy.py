@@ -4,6 +4,7 @@ and write them to the area_hierarchy table in the SQLite database.
 
 import re
 import sqlite3
+import sys
 import urllib.request
 
 DB_PATH = "data/allecijfers.db"
@@ -37,7 +38,7 @@ def parse_hierarchy(html: str, municipality: str) -> list[tuple]:
     return rows
 
 
-def main():
+def main(municipality: str | None = None):
     conn = sqlite3.connect(DB_PATH)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS area_hierarchy (
@@ -52,7 +53,8 @@ def main():
     conn.execute("CREATE INDEX IF NOT EXISTS idx_hier_wijk ON area_hierarchy(municipality, wijk_slug)")
     conn.commit()
 
-    for municipality in MUNICIPALITIES:
+    targets = [municipality] if municipality else MUNICIPALITIES
+    for municipality in targets:
         url = BASE_URL.format(municipality=municipality)
         print(f"Fetching {url} ...", end=" ", flush=True)
         html = fetch(url)
@@ -68,4 +70,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else None)

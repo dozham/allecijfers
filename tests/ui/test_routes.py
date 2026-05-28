@@ -1,3 +1,5 @@
+from unittest.mock import AsyncMock
+
 import pytest
 
 
@@ -213,23 +215,24 @@ def test_area_page_shows_in_comparison_when_added(client):
     assert "In vergelijking" in resp.text or "In comparison" in resp.text
 
 
-from unittest.mock import AsyncMock
-
-
 def test_crawl_start_valid_municipality(client, monkeypatch):
-    monkeypatch.setattr("ui.main._launch_crawl", AsyncMock())
+    mock = AsyncMock()
+    monkeypatch.setattr("ui.main._launch_crawl", mock)
     resp = client.post("/crawl/start", data={"municipality": "rotterdam"})
     assert resp.status_code == 200
     assert "rotterdam" in resp.text
     assert "alert-success" in resp.text
+    mock.assert_called_once_with("rotterdam")
 
 
 def test_crawl_start_normalizes_input(client, monkeypatch):
-    monkeypatch.setattr("ui.main._launch_crawl", AsyncMock())
+    mock = AsyncMock()
+    monkeypatch.setattr("ui.main._launch_crawl", mock)
     resp = client.post("/crawl/start", data={"municipality": "  Rotterdam  "})
     assert resp.status_code == 200
     assert "rotterdam" in resp.text
     assert "alert-success" in resp.text
+    mock.assert_called_once_with("rotterdam")
 
 
 def test_crawl_start_empty_municipality_returns_error(client):

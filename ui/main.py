@@ -274,7 +274,7 @@ async def _launch_crawl(municipality: str) -> None:
     cmd = (
         f"cd allecijfers && ../.venv/bin/scrapy crawl neighborhood "
         f"-a municipality={municipality} && "
-        f"cd .. && .venv/bin/python scrape_hierarchy.py"
+        f"cd .. && .venv/bin/python scrape_hierarchy.py {municipality}"
     )
     proc = await asyncio.create_subprocess_shell(cmd, cwd=str(_PROJECT_ROOT))
     await proc.wait()
