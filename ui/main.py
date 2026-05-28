@@ -1,5 +1,3 @@
-import asyncio
-import re
 from pathlib import Path
 
 from fastapi import Cookie, FastAPI, Request
@@ -10,8 +8,6 @@ from fastapi.templating import Jinja2Templates
 import ui.db as db
 
 _HERE = Path(__file__).parent
-_PROJECT_ROOT = _HERE.parent
-_background_tasks: set = set()
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory=_HERE / "static"), name="static")
@@ -268,32 +264,6 @@ async def compare_page(
             "scores": scores,
             "skip_units": _SKIP_UNITS,
         },
-    )
-
-
-async def _launch_crawl(municipality: str) -> None:
-    cmd = (
-        f"cd allecijfers && ../.venv/bin/scrapy crawl neighborhood "
-        f"-a municipality={municipality} && "
-        f"cd .. && .venv/bin/python scrape_hierarchy.py {municipality}"
-    )
-    proc = await asyncio.create_subprocess_shell(cmd, cwd=str(_PROJECT_ROOT))
-    await proc.wait()
-
-
-@app.post("/crawl/start", response_class=HTMLResponse)
-async def crawl_start(request: Request):
-    form = await request.form()
-    municipality = str(form.get("crawl_municipality", "")).strip().lower()
-    if not municipality or not re.fullmatch(r"[a-z0-9-]+", municipality):
-        return HTMLResponse('<div class="alert alert-error text-sm">Invalid municipality name.</div>')
-    task = asyncio.create_task(_launch_crawl(municipality))
-    _background_tasks.add(task)
-    task.add_done_callback(_background_tasks.discard)
-    return HTMLResponse(
-        f'<div class="alert alert-success text-sm">'
-        f'Crawl started for <strong>{municipality}</strong>. Runs in the background.'
-        f'</div>'
     )
 
 
