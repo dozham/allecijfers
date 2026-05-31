@@ -2,9 +2,13 @@ FROM python:3.13-slim
 WORKDIR /app
 
 RUN pip install --no-cache-dir \
-    "fastapi[standard]>=0.115" \
-    "jinja2>=3.1" \
-    "httpx>=0.27"
+    "fastapi[standard]==0.136.1" \
+    "jinja2==3.1.6" \
+    "httpx==0.28.1" \
+ && adduser --disabled-password --gecos "" appuser \
+ && chown appuser /app
+
+USER appuser
 
 COPY ui/ ui/
 COPY allecijfers/data/allecijfers.db allecijfers/data/allecijfers.db
