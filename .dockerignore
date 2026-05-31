@@ -18,6 +18,9 @@ scrape_hierarchy.py
 tests/
 docs/
 
+# Git history (large, not needed in image)
+.git/
+
 # Misc
 .claude/
 README.md
